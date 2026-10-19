@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kania Dwi Utami | 2403578</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- VARIABEL WARNA --- */
+        :root {
+            --bg-cream: #FAF5EB;
+            --text-dark: #2C2A29;
+            --red-accent: #D93B3B;
+            --yellow-accent: #F9C851;
+            --blue-accent: #A2D2EA;
+            --pink-accent: #F4C3C3;
+            --white: #FFFFFF;
+            --dark-blue: #1D2C6C;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* --- BACKGROUND POLA --- */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fadadd; 
+            background-image: url('bg-pattern.jpg'); 
+            background-size: 400px; 
+            background-attachment: fixed;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            overflow-x: hidden;
+        }
+
+        .main-container {
+            background-color: var(--white);
+            border: 1px solid #E0DCD3;
+            border-radius: 30px;
+            max-width: 1000px;
+            width: 100%;
+            padding: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* --- NAVIGASI --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+        .logo { font-weight: 600; font-size: 18px; color: var(--red-accent); }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            background-color: var(--bg-cream);
+            padding: 8px 20px;
+            border-radius: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--red-accent); }
+
+        /* --- HERO SECTION --- */
+        .hero-section { display: flex; gap: 30px; margin-bottom: 40px; }
+        
+        .hero-left {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-left img {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 20px;
+            border: 8px solid var(--blue-accent); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+
+        .hero-right { flex: 1.2; display: flex; flex-direction: column; justify-content: center; }
+        .hero-right h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            color: var(--red-accent);
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+        .subtitle-container { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
+        
+        .subtitle {
+            font-size: 13px;
+            color: #333;
+            font-weight: 600;
+            background-color: #FDF2D0;
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 8px;
+            width: fit-content;
+        }
+        
+        .description { font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+        
+        .skills-list { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px; }
+        .skills-list li {
+            background-color: var(--bg-cream);
+            border: 1px solid #E0DCD3;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--red-accent);
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            transition: 0.3s;
+            width: fit-content;
+            box-shadow: 0 4px 10px rgba(217, 59, 59, 0.3);
+        }
+        .btn:hover { background-color: #b02a2a; transform: translateY(-3px); }
+
+        /* --- TOOLS SECTION --- */
+        .tools-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: var(--bg-cream);
+            padding: 15px 25px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            border: 1px dashed #D0C9B9;
+        }
+        .tools-section p { font-weight: 600; font-size: 14px; }
+        .tool-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+        .tool-tags span {
+            background-color: var(--white);
+            padding: 5px 15px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid #E0DCD3;
+        }
+
+        /* --- GALERI KARYA --- */
+        .gallery-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px; }
+        .gallery-title { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--red-accent); }
+        
+        .carousel-container {
+            width: 100%;
+            overflow-x: auto;
+            display: flex;
+            padding: 20px 0;
+            margin-bottom: 20px;
+            cursor: grab;
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
+            scroll-behavior: smooth;
+        }
+        .carousel-container::-webkit-scrollbar { display: none; }
+        .carousel-container:active { cursor: grabbing; }
+
+        .carousel-track { display: flex; gap: 20px; padding: 0 10px; }
+
+        .carousel-card {
+            width: 220px;
+            height: 390px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+            background-color: #eee;
+            border: 5px solid var(--white);
+            pointer-events: none;
+        }
+        .carousel-card img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+
+        /* --- 11 ELEMEN IMUT --- */
+        .cute-elements-container {
+            background-color: var(--blue-accent);
+            border-radius: 20px;
+            padding: 25px 20px;
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: space-evenly; 
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .cute-elements-container img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .cute-elements-container img:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* --- BANNER KUNING --- */
+        .banner {
+            background-color: var(--yellow-accent);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        .banner-text h2 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 10px; }
+        .banner-text p { font-size: 14px; max-width: 450px; }
+        .banner-icon {
+            font-size: 40px;
+            background: var(--white);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .banner:hover .banner-icon { transform: rotate(15deg) scale(1.1); }
+
+        /* --- MY CORNER: LNGSHOT --- */
+        .corner-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 50px; }
+        .corner-card {
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: stretch;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            background-color: var(--pink-accent);
+        }
+        .corner-card:hover { transform: translateY(-5px); }
+        
+        .corner-img-container {
+            width: 40%;
+            display: flex;
+            gap: 5px;
+            padding: 10px;
+        }
+        .corner-img-container img {
+            width: 50%;
+            object-fit: cover;
+            border-radius: 10px;
+            height: 220px;
+        }
+
+        .corner-content { padding: 30px; width: 60%; display: flex; flex-direction: column; justify-content: center; }
+        .corner-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        .corner-content p { font-size: 14px; line-height: 1.6; margin-bottom: 15px; color: #333; }
+        .tags { display: flex; gap: 8px; margin-top: 15px; flex-wrap: wrap; }
+        .tags span {
+            background-color: var(--white);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-dark);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* --- WAKTU LUANG --- */
+        .best-sellers-section {
+            background-color: var(--dark-blue);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 50px;
+            color: var(--white);
+            position: relative;
+            border-top: 15px dotted var(--pink-accent);
+            border-bottom: 15px dotted var(--pink-accent);
+        }
+        .best-sellers-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .best-sellers-section > p {
+            font-size: 13px;
+            margin-bottom: 40px;
+            opacity: 0.8;
+            letter-spacing: 1px;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        .product-item {
+            text-align: center;
+            transition: 0.3s;
+            background: rgba(255,255,255,0.05);
+            padding: 15px 10px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-item:hover { transform: translateY(-10px); background: rgba(255,255,255,0.1); }
+
+        .product-img-box {
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            margin-bottom: 15px;
+        }
+        .product-img-box img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+
+        .product-title { font-size: 14px; font-weight: 600; margin-bottom: 5px; font-family: 'Poppins', sans-serif; }
+        .product-desc { font-size: 11px; opacity: 0.8; margin-bottom: 10px; line-height: 1.4; flex-grow: 1; }
+        .product-tag { font-size: 10px; font-weight: 700; color: var(--yellow-accent); letter-spacing: 1px; }
+
+        /* Marquee Text */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 20px;
+        }
+        .marquee-text {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--bg-cream);
+            font-family: 'Poppins', sans-serif;
+        }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* --- FOOTER --- */
+        footer { background-color: var(--red-accent); color: var(--white); padding: 40px; border-radius: 20px; }
+        footer h2 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 20px; }
+        .footer-content { display: flex; justify-content: space-between; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 20px; }
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            opacity: 0.9;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+        .footer-links a:hover { opacity: 1; padding-left: 5px; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero-section, .banner, .tools-section, .corner-card, .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .subtitle-container { align-items: center; }
+            .skills-list, .btn, .tool-tags { justify-content: center; margin: 0 auto; }
+            .hero-right h1 { font-size: 32px; }
+            .banner-text p { margin: 0 auto; }
+            .corner-img-container, .corner-content { width: 100%; }
+            .corner-img-container { justify-content: center; height: 250px; }
+            .corner-img-container img { height: 100%; width: 45%; }
+            .footer-content { gap: 20px; }
+            
+            .best-sellers-section { padding: 30px 20px; }
+            .product-grid { grid-template-columns: repeat(2, 1fr); }
+            .best-sellers-section h2 { font-size: 28px; text-align: center; }
+            .best-sellers-section > p { text-align: center; margin: 0 auto 30px auto; }
+            
+            .carousel-card { width: 180px; height: 320px; }
+            .cute-elements-container img { width: 45px; height: 45px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <!-- NAVIGASI -->
+        <nav>
+            <div class="logo">✦ Kania's Space</div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#gallery">Galeri</a>
+                <a href="#corner">My Corner</a>
+            </div>
+        </nav>
+
+        <!-- BAGIAN PROFIL -->
+        <section class="hero-section">
+            <div class="hero-left">
+                <img src="kania.png" alt="Foto Kania">
+            </div>
+            
+            <div class="hero-right">
+                <h1>Kania Dwi Utami</h1>
+                <div class="subtitle-container">
+                    <span class="subtitle">Mahasiswa Teknik Logistik UPI | Graphic Designer</span>
+                </div>
+                
+                <p class="description">
+                    Halo! Saya seorang mahasiswa yang aktif berorganisasi namun tetap memiliki passion besar di dunia desain visual. Saya berfokus pada pembuatan desain poster digital, seni gambar tradisional, dan visual branding. Bagi saya, desain adalah cara untuk menyampaikan pesan secara estetik dan profesional.
+                </p>
+
+                <ul class="skills-list">
+                    <li>Desain Poster Digital</li>
+                    <!-- TEKS SUDAH DIGANTI -->
+                    <li>Traditional Illustration</li>
+                    <li>Layouting & Tipografi</li>
+                    <li>Visual Branding</li>
+                </ul>
+
+                <a href="https://wa.me/6282210176719" class="btn" target="_blank">Let's Collaborate ✨</a>
+            </div>
+        </section>
+
+        <!-- BAGIAN TOOLS -->
+        <div class="tools-section">
+            <p>🛠️ Tools Andalan Saya:</p>
+            <div class="tool-tags">
+                <span>🎨 Canva (Expert)</span>
+                <span>🖌️ Ibis Paint X</span>
+            </div>
+        </div>
+
+        <!-- GALERI KARYA -->
+        <div class="gallery-header" id="gallery">
+            <h2 class="gallery-title">Galeri Karya</h2>
+        </div>
+        
+        <div class="carousel-container" id="slider">
+            <div class="carousel-track">
+                <div class="carousel-card"><img src="digital 1.jpg" alt="Karya Digital 1"></div>
+                <div class="carousel-card"><img src="tradi 1.jpg" alt="Karya Tradisional 1"></div>
+                <div class="carousel-card"><img src="digital 2.jpg" alt="Karya Digital 2"></div>
+                <div class="carousel-card"><img src="tradi 2.jpg" alt="Karya Tradisional 2"></div>
+                <div class="carousel-card"><img src="digital 3.jpg" alt="Karya Digital 3"></div>
+                <div class="carousel-card"><img src="tradi 3.jpg" alt="Karya Tradisional 3"></div>
+                <div class="carousel-card"><img src="digital 4.jpg" alt="Karya Digital 4"></div>
+                <div class="carousel-card"><img src="tradi 4.jpg" alt="Karya Tradisional 4"></div>
+                <div class="carousel-card"><img src="digital 5.jpg" alt="Karya Digital 5"></div>
+                <div class="carousel-card"><img src="tradi 5.jpg" alt="Karya Tradisional 5"></div>
+                <div class="carousel-card"><img src="digital 6.jpg" alt="Karya Digital 6"></div>
+                <div class="carousel-card"><img src="tradi 6.jpg" alt="Karya Tradisional 6"></div>
+                <div class="carousel-card"><img src="digital 7.jpg" alt="Karya Digital 7"></div>
+                <div class="carousel-card"><img src="tradi 7.png" alt="Karya Tradisional 7"></div>
+                <div class="carousel-card"><img src="digital 8.jpg" alt="Karya Digital 8"></div>
+                <div class="carousel-card"><img src="tradi 8.jpg" alt="Karya Tradisional 8"></div>
+                <div class="carousel-card"><img src="digital 9.jpg" alt="Karya Digital 9"></div>
+                <div class="carousel-card"><img src="tradi 9.jpg" alt="Karya Tradisional 9"></div>
+                <div class="carousel-card"><img src="digital 10.jpg" alt="Karya Digital 10"></div>
+                <div class="carousel-card"><img src="digital 11.jpg" alt="Karya Digital 11"></div>
+            </div>
+        </div>
+
+        <!-- 11 FOTO ELEMEN IMUT -->
+        <div class="cute-elements-container">
+            <img src="elemen imut 1.png" alt="Elemen Imut 1">
+            <img src="elemen imut 2.png" alt="Elemen Imut 2">
+            <img src="elemen imut 3.png" alt="Elemen Imut 3">
+            <img src="elemen imut 4.png" alt="Elemen Imut 4">
+            <img src="elemen imut 5.png" alt="Elemen Imut 5">
+            <img src="elemen imut 6.png" alt="Elemen Imut 6">
+            <img src="elemen imut 7.png" alt="Elemen Imut 7">
+            <img src="elemen imut 8.png" alt="Elemen Imut 8">
+            <img src="elemen imut 9.png" alt="Elemen Imut 9">
+            <img src="elemen imut 10.png" alt="Elemen Imut 10">
+            <img src="elemen imut 11.png" alt="Elemen Imut 11">
+        </div>
+
+        <!-- BANNER KUNING -->
+        <section class="banner">
+            <div class="banner-text">
+                <h2>Open for Commissions! 💸</h2>
+                <p>Butuh poster untuk acara, feed Instagram estetik, atau ilustrasi custom? Saya siap membantu mewujudkan visual impianmu dengan harga mahasiswa!</p>
+            </div>
+            <div class="banner-icon">
+                🤝
+            </div>
+        </section>
+
+        <!-- MY CORNER: LNGSHOT -->
+        <h2 class="gallery-title" id="corner" style="margin-bottom: 20px;">My Corner ✨</h2>
+        <section class="corner-grid">
+            <div class="corner-card">
+                <div class="corner-img-container">
+                    <img src="LNGSHOT.jpg" alt="LNGSHOT Grup">
+                    <img src="ohyul.jpg" alt="Kwon Ohyul">
+                </div>
+                <div class="corner-content">
+                    <h3>LNGSHOT</h3>
+                    <p>Lagi kecanduan lagu-lagunya LNGSHOT nih! Perpaduan vokal mereka sama aransemen lagunya bener-bener pas dan enak banget di telinga. Bias? jelas Kwon Ohyul, my kwon mozarella orori aurora princess<3</p>
+                    <div class="tags">
+                        <span>#lngshot</span>
+                        <span>#Ohyul</span>
+                        <span>#Ryul</span>
+                        <span>#Woojin</span>
+                        <span>#Louis</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WAKTU LUANG -->
+        <section class="best-sellers-section">
+            <h2>What I Do For Fun</h2>
+            <p>Made for midnight scrolling, coffee breaks, and everything in between.</p>
+            
+            <div class="product-grid">
+                <!-- Item 1: Film Horror -->
+                <div class="product-item">
+                    <div class="product-img-box">
+                        <img src="valaks.jpg" alt="Film Horror">
+                    </div>
+                    <div class="product-title">Film Horror</div>
+                    <div class="product-desc">ga horror ga asiq</div>
+                    <div class="product-tag">THRILLER TIME</div>
+                </div>
+
+                <!-- Item 2: Main Roblox -->
+                <div class="product-item">
+                    <div class="product-img-box">
+                        <img src="rosblok.jpg" alt="Main Roblox">
+                    </div>
+                    <div class="product-title">Main Roblox</div>
+                    <div class="product-desc">buat summit gunung aja</div>
+                    <div class="product-tag">GAMING</div>
+                </div>
+
+                <!-- Item 3: Nonton Turnamen MLBB -->
+                <div class="product-item">
+                    <div class="product-img-box">
+                        <img src="mlbb.png" alt="Nonton Turnamen MLBB">
+                    </div>
+                    <div class="product-title">Nonton Turnamen MLBB</div>
+                    <div class="product-desc">sebatas nonton, disuruh main auto skill issue</div>
+                    <div class="product-tag">E-SPORTS</div>
+                </div>
+
+                <!-- Item 4: Bang Windah -->
+                <div class="product-item">
+                    <div class="product-img-box">
+                        <img src="winduy.jpg" alt="Nonton YT bang Windah">
+                    </div>
+                    <div class="product-title">Nonton YT bang Windah</div>
+                    <div class="product-desc">"Tidak pernah berhenti tak pernah menyerah memberikan menyajikan game-game horror Indonesia berkualitas ke layar kaca Anda."</div>
+                    <div class="product-tag">HEALING</div>
+                </div>
+            </div>
+
+            <!-- Tulisan Berjalan -->
+            <div class="marquee-container">
+                <div class="marquee-text">
+                    ⭑ SCROLL TIME ⭑ HORROR TIME ⭑ ROBLOX TIME ⭑ HEALING TIME ⭑ SCROLL TIME ⭑ HORROR TIME ⭑ ROBLOX TIME ⭑ HEALING TIME ⭑
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <h2>Let's Connect</h2>
+            <div class="footer-content">
+                <div>
+                    <p><strong>Email:</strong> dwiutamikania@gmail.com</p>
+                    <p><strong>Location:</strong> Bandung, Indonesia</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://wa.me/6282210176719" target="_blank">WhatsApp: 082210176719</a>
+                    <a href="https://instagram.com/kaniaadwi_" target="_blank">Instagram: @kaniaadwi_</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- SCRIPT UNTUK AUTO SCROLL & DRAG GESER -->
+    <script>
+        const slider = document.getElementById('slider');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let isHovered = false;
+
+        function autoScroll() {
+            if (!isHovered && !isDown) {
+                slider.scrollLeft += 1; 
+                
+                if (slider.scrollLeft >= (slider.scrollWidth - slider.clientWidth - 1)) {
+                    slider.scrollLeft = 0;
+                }
+            }
+            requestAnimationFrame(autoScroll);
+        }
+        requestAnimationFrame(autoScroll);
+
+        slider.addEventListener('mouseenter', () => isHovered = true);
+        slider.addEventListener('mouseleave', () => {
+            isHovered = false;
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; 
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        slider.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('touchend', () => { isDown = false; });
+        slider.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body>
+</html>
